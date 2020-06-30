@@ -39,4 +39,20 @@ router.get('/',(req,res)=>{
 	})
 })
 
+//delete a coupan
+router.delete('/:id',(req,res) =>{
+	let id = req.params.id;
+	stripe.coupons.del(id,(err,confirmation) =>{
+		if(err){
+			console.log("ERROR at \"Deleting Coupan\"");
+			res.statusMessage = err;
+			res.status(401).end();
+        }
+        if(confirmation){
+		console.log("\"Coupan\" deleted");
+        res.send(confirmation);
+    }
+	})
+})
+
 module.exports = router;
