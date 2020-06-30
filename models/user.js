@@ -37,5 +37,13 @@ module.exports.addUser = (data,callback) =>{
 	 });
 }
  
+/* Login User */
+module.exports.signin = (data,callback) => {
+	console.log("data " +data)
+
+	user.findOne({email: data.email},callback)
+    
+    
+}
 
 
