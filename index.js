@@ -4,6 +4,7 @@ const bodyParser = require("Body-parser");
 var cors = require('cors')
 const app = express();
 var user = require ('./routes/users');
+var coupan = require('./routes/coupans');
 
 const port = process.env.PORT || 3000;
 
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors())
 
 app.use('/user',user);
+app.use('/coupan', coupan);
 
 mongoose.connect("mongodb://root:toor321@ds161104.mlab.com:61104/task").then(
 	console.log("Database Connectd"));
