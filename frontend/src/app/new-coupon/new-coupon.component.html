@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col s8 offset-s2 m4 offset-m4" id="form">
+<h3 class="text-center">Add coupon</h3>
+<br>
+<form [formGroup]="couponForm" method="POST" (ngSubmit)="addCoupon()" class="form-container">
+
+  <div class="row">
+    
+        <div class="form-group">
+            <label for="percent">Percent</label>
+            <input type="number" class="form-control validate" name="percent" formControlName="percent" >
+        </div>
+        
+    
+  </div>
+
+  <div class="row">
+    
+        <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="text"  class="form-control validate" name="duration" formControlName="duration" >
+        </div>
+        
+  </div>
+  
+<div class="row">
+    
+        <div class="form-group">
+            <label for="months">Months</label>
+            <input type="number"  class="form-control validate" name="months" formControlName="months">
+        </div>
+        
+    
+  </div>
+
+
+    <button type="submit" class="btn btn-primary col m5 offset-m3" >Add Coupon</button>
+
+</form>
+</div>
+</div>

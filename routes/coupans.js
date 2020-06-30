@@ -6,10 +6,11 @@ var stripe = require('stripe')('sk_test_51GzchSFIxbY9BazzQXAOJS3j5i0anefDZYFUHyN
 // add Coupan
 router.post('/add',(req,res)=>{
     let obj = req.body;
+    console.log(obj);
     stripe.coupons.create({
-        percent_off: obj.Coupan.percent,
-        duration: obj.Coupan.duration,
-        duration_in_months: obj.Coupan.months
+        percent_off: obj.percent,
+        duration: obj.duration,
+        duration_in_months: obj.months
     }, (err,coupon)=>{
         if (err) {
             console.log("Error at \"Adding Coupon\"");

@@ -15,4 +15,7 @@ export class CouponService {
   deleteCoupon(couponId){
     return this.http.delete('http://localhost:3000/coupan/'+couponId);
   }
+  addCuopon(data){
+    return this.http.post('http://localhost:3000/coupan/add', data); 
+  }
 }

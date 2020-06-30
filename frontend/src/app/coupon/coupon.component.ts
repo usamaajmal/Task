@@ -32,7 +32,8 @@ export class CouponComponent implements OnInit {
         
       });
 
-      this.router.navigate(["/coupon"]);
+      window.location.reload();
+
      
     }
 

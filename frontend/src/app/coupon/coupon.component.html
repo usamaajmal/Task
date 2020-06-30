@@ -1,5 +1,6 @@
 <h1>Coupons</h1>
 <br>
+<button class="material-icons" ><a routerLink="/coupon/add">Add New</a></button>
 <br><br>
 <p *ngIf="couponsError; then firstTemp else secondTemp"></p>
 <ng-template #firstTemp >SORRY: no coupons found</ng-template>
