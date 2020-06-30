@@ -34,7 +34,7 @@ router.get('/',(req,res)=>{
          }
          if (coupons){
 		 console.log("retrieved all \"Coupons\"");
-         res.send(coupons);
+         res.send(coupons.data);
          }
 	})
 })
