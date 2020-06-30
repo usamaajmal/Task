@@ -1,0 +1,21 @@
+<h1>Coupons</h1>
+<br>
+<button class="material-icons" ><a routerLink="/coupon/add">Add New</a></button>
+<br><br>
+<p *ngIf="couponsError; then firstTemp else secondTemp"></p>
+<ng-template #firstTemp >SORRY: no coupons found</ng-template>
+
+<ng-template #secondTemp >
+  <div class="row">
+    <div class="col s9 m3" *ngFor="let coupon of coupons" style=" min-width:120px;">
+      <div class="card">
+        <div class="card-image" style="max-height:250px;">
+          <h3>Percent: {{coupon.percent_off}}<button class="material-icons delBtn" (click)= "deleteCoupon(coupon.id)">Delete</button></h3> 
+        </div>
+        <div class="card-content" style="border-bottom: 2px solid black;">
+          Duration: {{coupon.duration}}
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
